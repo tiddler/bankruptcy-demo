@@ -31,36 +31,28 @@ export const siteConfig = {
   ],
   navMenuItems: [
     {
-      label: "Profile",
-      href: "/profile",
+      label: "首页",
+      href: "/",
     },
     {
-      label: "Dashboard",
-      href: "/dashboard",
+      label: "材料智能上传",
+      href: "/upload",
     },
     {
-      label: "Projects",
-      href: "/projects",
+      label: "实时处理追踪",
+      href: "/tracking",
     },
     {
-      label: "Team",
-      href: "/team",
+      label: "智能结果展示",
+      href: "/results",
     },
     {
-      label: "Calendar",
-      href: "/calendar",
+      label: "决策辅助工具",
+      href: "/decision",
     },
     {
-      label: "Settings",
-      href: "/settings",
-    },
-    {
-      label: "Help & Feedback",
-      href: "/help-feedback",
-    },
-    {
-      label: "Logout",
-      href: "/logout",
+      label: "协同管理平台",
+      href: "/collaboration",
     },
   ],
   links: {

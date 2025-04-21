@@ -9,6 +9,7 @@ import DefaultLayout from "@/layouts/default";
 // Import icons for features
 import { FaFileUpload, FaSyncAlt, FaFileContract, FaBalanceScale, FaUsers } from "react-icons/fa";
 import React from "react"; // Needed for mapping
+import NextLink from "next/link"; // Import NextLink
 
 // Define feature descriptions and icons
 const features = [
@@ -88,18 +89,22 @@ export default function IndexPage() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-6 max-w-4xl">
           {features.map((feature) => (
-            <Card key={feature.href} isPressable isHoverable>
-              <CardHeader className="flex gap-3">
-                <div className="text-2xl">{feature.icon}</div>
-                <div className="flex flex-col">
-                  <p className="text-md font-semibold">{feature.name}</p>
-                </div>
-              </CardHeader>
-              <CardBody>
-                <p className="text-sm text-default-600">{feature.description}</p>
-                <Link href={feature.href} className="text-sm text-primary mt-2">了解更多 →</Link>
-              </CardBody>
-            </Card>
+            // Wrap Card with NextLink
+            <NextLink key={feature.href} href={feature.href} passHref>
+              <Card isPressable isHoverable className="h-full"> {/* Add h-full for consistent height if needed */}
+                <CardHeader className="flex gap-3">
+                  <div className="text-2xl">{feature.icon}</div>
+                  <div className="flex flex-col">
+                    <p className="text-md font-semibold">{feature.name}</p>
+                  </div>
+                </CardHeader>
+                <CardBody>
+                  <p className="text-sm text-default-600">{feature.description}</p>
+                  {/* Remove the inner Link */}
+                  {/* <Link href={feature.href} className="text-sm text-primary mt-2">了解更多 →</Link> */}
+                </CardBody>
+              </Card>
+            </NextLink>
           ))}
         </div>
       </section>
